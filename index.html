@@ -28,7 +28,7 @@
 </table>
 
 <hr noshade="noshade">
-<h2><font color="#005128">Project Title: </font><font><font color="#005128">Optimizing Raytracing Algorithm Using CUDA</font></font></h2>
+<h2><font color="#005128">Project Title: </font><font><font color="#005128">CUDA Accelerated Raytracing</font></font></h2>
 
 <h2><font><font color="#005128">Name: Sivakumaran Gowthaman</font></font></h2>
 
@@ -37,11 +37,7 @@
 
 
 <hr noshade="noshade">
-<b><font color="#005128">Project Outline:</font></b> Now, there are many codes to generate images using raytracing algorithm, which can run on CPU or GPU in single or multi-thread methods. In this paper, an optimized algorithm has been designed to generate image using raytracing algorithm to run on CPU or GPU in multi-thread algorithm.
-
-This algorithm employs light with depth of 8 to generate images. It is optimized by changing pixel travel priority and ray of light to thread, dedicating depth function to empty threads, and using optimized functions from MSDN library. Its code has been written in C++ and CUDA. In addition, we do the following to show its performance: comparing implementation in different compiler mode, changing thread number, examining different resolution, and investigating data bandwidth.
-
-The results show that one can generate at least 11 frames per second in HD (720p) resolution by GPU processor and GT 840M graphic card, using trace method. If better graphic card employ, this algorithm and program can be used to generate real-time animation.
+<b><font color="#005128">Project Outline:</font></b> In CUDA accelerated raytracing implementation, when threads are called recursively to carry ray-surface intersection and shading functions, stack overflow occurs due to the limited shared memory of the GPU. This results in low quality rendered images. This paper addresses this issue by converting the recursive functions into iterative functions with explicitly defined stack depth. Redundant ray-surface intersection restricts the raytracing implementation from achieving real time rendering. This paper handles this issue by deploying Binary Volume Hierarchy (BVH) acceleration structure.
 <p><b><font color="#005128">Startup Paper(s):</font></b></p> 
 
 <ul>
